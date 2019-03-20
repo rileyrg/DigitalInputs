@@ -4,13 +4,13 @@
 #include <Arduino.h>
 #include <avr/io.h>
 
-#include <TFT_FastPin.h>
-
 #define ledPin 5
 #define  buttonApin 9
 #define  buttonBpin 8
 
 byte leds = 0;
+boolean pressed=false;
+boolean on=false;
 
 void setup() 
 {
@@ -23,10 +23,10 @@ void loop()
 {
   if (digitalRead(buttonApin) == LOW)
   {
-    digitalWrite(ledPin, HIGH);
-  } 
-  if (digitalRead(buttonBpin) == LOW)
-  {
-    digitalWrite(ledPin, LOW);
-  }
+    if (!pressed) {
+      pressed=true;
+      digitalWrite(ledPin, (on=!on)?HIGH:LOW);
+    }
+  } else
+    pressed=false;
 }
