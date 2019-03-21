@@ -19,7 +19,7 @@ void setup()
 
 void loop() 
 {
-  static boolean pressed=false,  on=false;
+  static boolean pressed=false,  on=false; //
   if (digitalRead(buttonApin) == LOW)
   {
     if (!pressed) {
