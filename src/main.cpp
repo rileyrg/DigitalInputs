@@ -9,8 +9,6 @@
 #define  buttonBpin 8
 
 byte leds = 0;
-boolean pressed=false;
-boolean on=false;
 
 void setup() 
 {
@@ -21,6 +19,7 @@ void setup()
 
 void loop() 
 {
+  static boolean pressed=false,  on=false;
   if (digitalRead(buttonApin) == LOW)
   {
     if (!pressed) {
