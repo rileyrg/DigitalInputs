@@ -1,8 +1,4 @@
-#include <stdio.h>
-#include <stdint.h>
-
 #include <Arduino.h>
-#include <avr/io.h>
 
 #define ledPin 5
 #define  buttonApin 9
